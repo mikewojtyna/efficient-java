@@ -8,6 +8,41 @@
 	<artifactId>efficient-java</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
+	<dependencies>
+		<!-- JUnit Jupiter dependencies -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit-jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>${junit-jupiter.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit-jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- JUnit platform launcher -->
+		<!-- To be able to run tests from IDE directly -->
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<version>${junit-platform.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>${assertj.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -25,10 +60,18 @@
 			</plugin>
 		</plugins>
 	</build>
+
 	<properties>
 		<maven-compiler-plugin.version>
 			3.8.0
 		</maven-compiler-plugin.version>
 		<java.version>8</java.version>
+		<junit-jupiter.version>
+			5.1.1
+		</junit-jupiter.version>
+		<junit-platform.version>
+			1.1.1
+		</junit-platform.version>
+		<assertj.version>3.9.1</assertj.version>
 	</properties>
 </project>
