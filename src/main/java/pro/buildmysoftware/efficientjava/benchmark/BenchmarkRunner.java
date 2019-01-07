@@ -1,4 +1,4 @@
-package pro.buildmysoftware.efficientjava.benchark;
+package pro.buildmysoftware.efficientjava.benchmark;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

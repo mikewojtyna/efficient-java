@@ -1,4 +1,4 @@
-package pro.buildmysoftware.efficientjava.benchark;
+package pro.buildmysoftware.efficientjava.benchmark;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

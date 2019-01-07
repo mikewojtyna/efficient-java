@@ -1,4 +1,4 @@
-package pro.buildmysoftware.efficientjava.benchark;
+package pro.buildmysoftware.efficientjava.benchmark;
 
 public class Example {
 	public static void main(String[] args) {

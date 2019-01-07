@@ -1,4 +1,4 @@
-package pro.buildmysoftware.efficientjava.benchark;
+package pro.buildmysoftware.efficientjava.benchmark;
 
 public class AnyClass {
 	@MethodBenchmark(value = 10_000)
