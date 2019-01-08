@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import static org.assertj.core.api.Fail.fail;
-
 public class ArrayListExample {
 	@DisplayName("show array lists usage")
 	@Test
@@ -23,6 +21,5 @@ public class ArrayListExample {
 		while (iterator.hasNext()) {
 			iterator.next();
 		}
-		fail("Write your test");
 	}
 }
