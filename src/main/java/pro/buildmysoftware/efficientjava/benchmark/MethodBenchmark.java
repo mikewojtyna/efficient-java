@@ -8,5 +8,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @interface MethodBenchmark {
+	int[] intParams() default {};
+
 	int value();
 }

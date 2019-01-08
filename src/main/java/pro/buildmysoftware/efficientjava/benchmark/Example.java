@@ -9,11 +9,6 @@ public class Example {
 		runner.benchmarkMethods(anyObject);
 		runner.benchmarkMethods(anyObject);
 		runner.benchmarkMethods(anyObject);
-		runner.benchmarkMethods(anyObject);
-		runner.benchmarkMethods(anyObject);
-		runner.benchmarkMethods(anyObject);
-		runner.benchmarkMethods(anyObject);
-		runner.benchmarkMethods(anyObject);
 
 	}
 }

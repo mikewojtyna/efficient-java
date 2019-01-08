@@ -9,4 +9,9 @@ public class AnyClass {
 		}
 		return res;
 	}
+
+	@MethodBenchmark(value = 10_000, intParams = {10, 20})
+	int multiply(int x, int y) {
+		return x * y;
+	}
 }

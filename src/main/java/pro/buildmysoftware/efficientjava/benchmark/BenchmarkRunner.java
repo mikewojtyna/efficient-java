@@ -2,6 +2,7 @@ package pro.buildmysoftware.efficientjava.benchmark;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 class BenchmarkRunner {
@@ -25,16 +26,26 @@ class BenchmarkRunner {
 				long start = System.currentTimeMillis();
 				for (int i = 0; i < methodBenchmark
 					.value(); i++) {
-					currentMethod.invoke(object);
+					Object[] intParams = IntStream
+						.of(methodBenchmark.intParams())
+						.boxed().toArray();
+					if (intParams.length == 0) {
+						currentMethod.invoke(object);
+					}
+					else {
+						currentMethod
+							.invoke(object,
+								intParams);
+					}
 				}
 				long end = System.currentTimeMillis();
-				System.out.println("Method " + method
-					.getName() + " " + "took" + ": " + (end - start));
+				System.out.println(String
+					.format("Method %s took %s ms", method
+						.getName(), end - start));
 			}
 			catch (IllegalAccessException | InvocationTargetException e) {
 				throw new RuntimeException(String
-					.format("Failed to bencharm method %s"
-						, method
+					.format("Failed to benchmark method " + "%s", method
 						.getName()), e);
 			}
 		}
