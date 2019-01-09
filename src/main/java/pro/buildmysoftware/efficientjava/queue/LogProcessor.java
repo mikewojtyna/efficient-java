@@ -4,17 +4,20 @@ import java.util.concurrent.BlockingQueue;
 
 public class LogProcessor {
 	void processLogEntry(BlockingQueue<LogEntry> eventsQueue) {
-		try {
-			while (true) {
+		while (true) {
+			try {
 				LogEntry nextEntry = eventsQueue.take();
 				System.out
 					.printf("Processing log entry %s\n",
 						nextEntry);
-				Thread.sleep(500);
 			}
-		}
-		catch (InterruptedException e) {
-			e.printStackTrace();
+			catch (InterruptedException e) {
+				// restore the flag, so the caller can know
+				// the thread was interrupted and not handled
+				// properly
+				Thread.currentThread().interrupt();
+				throw new RuntimeException(e);
+			}
 		}
 	}
 }
