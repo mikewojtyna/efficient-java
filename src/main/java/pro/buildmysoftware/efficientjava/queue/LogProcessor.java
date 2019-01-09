@@ -3,7 +3,13 @@ package pro.buildmysoftware.efficientjava.queue;
 import java.util.concurrent.BlockingQueue;
 
 public class LogProcessor {
-	void processLogEntry(BlockingQueue<LogEntry> eventsQueue) {
+	private BlockingQueue<LogEntry> eventsQueue;
+
+	public LogProcessor(BlockingQueue<LogEntry> eventsQueue) {
+		this.eventsQueue = eventsQueue;
+	}
+
+	void processEntries() {
 		while (true) {
 			try {
 				LogEntry nextEntry = eventsQueue.take();

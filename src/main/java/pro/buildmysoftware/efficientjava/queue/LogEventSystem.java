@@ -8,12 +8,11 @@ public class LogEventSystem {
 		BlockingQueue<LogEntry> eventsQueue =
 			new PriorityBlockingQueue<>();
 
-		LogProcessor logProcessor = new LogProcessor();
-		new Thread(() -> logProcessor.processLogEntry(eventsQueue))
-			.start();
+		LogProcessor logProcessor = new LogProcessor(eventsQueue);
+		new Thread(() -> logProcessor.processEntries()).start();
 
-		LogEntryEventPublisher publisher =
-			new LogEntryEventPublisher();
-		new Thread(() -> publisher.start(eventsQueue)).start();
+		LogEntryPublisher publisher =
+			new LogEntryPublisher(eventsQueue);
+		new Thread(() -> publisher.publishEntries()).start();
 	}
 }

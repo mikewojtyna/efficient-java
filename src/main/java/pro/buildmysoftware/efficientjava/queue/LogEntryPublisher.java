@@ -4,15 +4,17 @@ import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 import java.util.stream.Stream;
 
-public class LogEntryEventPublisher {
+public class LogEntryPublisher {
 
+	private final BlockingQueue<LogEntry> eventsQueue;
 	private Random random;
 
-	public LogEntryEventPublisher() {
+	public LogEntryPublisher(BlockingQueue<LogEntry> eventsQueue) {
+		this.eventsQueue = eventsQueue;
 		random = new Random();
 	}
 
-	void start(BlockingQueue<LogEntry> eventsQueue) {
+	void publishEntries() {
 		Stream.generate(this::nextEntry).limit(100)
 			.forEach(eventsQueue::add);
 	}
