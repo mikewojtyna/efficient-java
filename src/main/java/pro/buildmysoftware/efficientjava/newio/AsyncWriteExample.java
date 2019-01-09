@@ -3,6 +3,7 @@ package pro.buildmysoftware.efficientjava.newio;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousFileChannel;
+import java.nio.charset.Charset;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.ExecutionException;
@@ -11,8 +12,8 @@ import java.util.concurrent.Future;
 public class AsyncWriteExample {
 	public static void main(String[] args) throws IOException,
 		ExecutionException, InterruptedException {
-		ByteBuffer buffer = ByteBuffer.allocate(1024);
-		buffer.put("hello".getBytes());
+		ByteBuffer buffer = ByteBuffer.allocate(48);
+		buffer.put("hello".getBytes(Charset.forName("UTF-8")));
 		buffer.flip();
 
 		try (AsynchronousFileChannel fileChannel =
