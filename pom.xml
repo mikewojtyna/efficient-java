@@ -9,6 +9,16 @@
 	<version>1.0-SNAPSHOT</version>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-core</artifactId>
+			<version>${jmh.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-generator-annprocess</artifactId>
+			<version>${jmh.version}</version>
+		</dependency>
 		<!-- JUnit Jupiter dependencies -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -86,5 +96,6 @@
 		</junit-platform.version>
 		<assertj.version>3.9.1</assertj.version>
 		<slf4j.version>1.7.25</slf4j.version>
+		<jmh.version>1.19</jmh.version>
 	</properties>
 </project>
