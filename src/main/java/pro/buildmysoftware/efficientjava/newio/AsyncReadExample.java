@@ -10,7 +10,7 @@ import java.util.concurrent.Future;
 public class AsyncReadExample {
 	public static void main(String[] args) throws IOException,
 		ExecutionException, InterruptedException {
-		ByteBuffer buffer = ByteBuffer.allocate(1024);
+		ByteBuffer buffer = ByteBuffer.allocate(48);
 
 		try (AsynchronousFileChannel fileChannel =
 			     AsynchronousFileChannel
