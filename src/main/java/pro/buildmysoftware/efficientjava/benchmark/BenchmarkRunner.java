@@ -5,13 +5,13 @@ import java.lang.reflect.Method;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-class BenchmarkRunner {
+public class BenchmarkRunner {
 	/**
 	 * Runs a benchmark of all methods on the given object.
 	 *
 	 * @param object the object to bencharm
 	 */
-	void benchmarkMethods(Object object) {
+	public void benchmarkMethods(Object object) {
 		Class<?> clazz = object.getClass();
 		Method[] methods = clazz.getDeclaredMethods();
 		Stream.of(methods).forEach(m -> benchmarkMethod(m, object));
