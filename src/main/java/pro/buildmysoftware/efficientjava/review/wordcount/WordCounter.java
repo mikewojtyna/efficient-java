@@ -15,8 +15,6 @@ class WordCounter {
 			for (Word word : words) {
 				if (wordString.equals(word.getValue())) {
 					word.setTimes(word.getTimes() + 1);
-					wordFoundPreviously = true;
-					break;
 				}
 			}
 			if (!wordFoundPreviously) {
