@@ -1,4 +1,4 @@
-package pro.buildmysoftware.efficientjava.bad;
+package pro.buildmysoftware.efficientjava.bad.algorithms;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;

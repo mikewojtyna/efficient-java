@@ -1,4 +1,4 @@
-package pro.buildmysoftware.efficientjava.bad;
+package pro.buildmysoftware.efficientjava.bad.algorithms;
 
 class Fibonacci {
 	static int fibonacci(int n) {
