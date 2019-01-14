@@ -16,7 +16,7 @@ public class ListIterationBenchmark {
 	@Measurement(iterations = 10)
 	public void arrayListBenchmark(ArrayListState state,
 				       Blackhole blackhole) {
-		for (int i = 0; i < ELEMENTS; i++) {
+		for (int i = 0; i < state.elements; i++) {
 			blackhole.consume(state.list.get(i));
 		}
 	}
@@ -26,19 +26,21 @@ public class ListIterationBenchmark {
 	@Measurement(iterations = 10)
 	public void linkedListBenchmark(LinkedListState state,
 					Blackhole blackhole) {
-		for (int i = 0; i < ELEMENTS; i++) {
+		for (int i = 0; i < state.elements; i++) {
 			blackhole.consume(state.list.get(i));
 		}
 	}
 
 	@State(Scope.Benchmark)
 	public static class LinkedListState {
+		public int elements;
 		public List<Integer> list;
 
 		@Setup
 		public void setup() {
+			elements = ELEMENTS;
 			list = new LinkedList<>();
-			for (int i = 0; i < ELEMENTS; i++) {
+			for (int i = 0; i < elements; i++) {
 				list.add(i);
 			}
 		}
@@ -46,12 +48,14 @@ public class ListIterationBenchmark {
 
 	@State(Scope.Benchmark)
 	public static class ArrayListState {
+		public int elements;
 		public List<Integer> list;
 
 		@Setup
 		public void setup() {
+			elements = ELEMENTS;
 			list = new ArrayList<>();
-			for (int i = 0; i < ELEMENTS; i++) {
+			for (int i = 0; i < elements; i++) {
 				list.add(i);
 			}
 		}
