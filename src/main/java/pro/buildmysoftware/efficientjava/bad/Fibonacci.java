@@ -2,9 +2,9 @@ package pro.buildmysoftware.efficientjava.bad;
 
 class Fibonacci {
 	static int fibonacci(int n) {
-		return recursiveFibonacci(n);
+		// return recursiveFibonacci(n);
 		// uncomment this
-		// return dynamicFibonacci(n);
+		return dynamicFibonacci(n);
 	}
 
 	private static int dynamicFibonacci(int n) {
@@ -25,6 +25,6 @@ class Fibonacci {
 		if (n < 2) {
 			return n;
 		}
-		return fibonacci(n - 1) + fibonacci(n - 2);
+		return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
 	}
 }

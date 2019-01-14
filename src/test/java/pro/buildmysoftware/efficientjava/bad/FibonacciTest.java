@@ -19,7 +19,6 @@ class FibonacciTest {
 		"6, 8",
 		"7, 13",
 		"8, 21"
-
 	})
 	// @formatter:on
 	@ParameterizedTest(name = "given: n={0}; expected: sum={1}")
