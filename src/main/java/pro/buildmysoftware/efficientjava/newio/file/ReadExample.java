@@ -1,4 +1,4 @@
-package pro.buildmysoftware.efficientjava.newio;
+package pro.buildmysoftware.efficientjava.newio.file;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
