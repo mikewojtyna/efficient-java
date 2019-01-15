@@ -18,8 +18,7 @@ public class BenchmarkRunner {
 	}
 
 	private void benchmarkMethod(Method method, Object object) {
-		Method currentMethod = method;
-		MethodBenchmark methodBenchmark = currentMethod
+		MethodBenchmark methodBenchmark = method
 			.getAnnotation(MethodBenchmark.class);
 		if (methodBenchmark != null) {
 			try {
@@ -30,12 +29,11 @@ public class BenchmarkRunner {
 						.of(methodBenchmark.intParams())
 						.boxed().toArray();
 					if (intParams.length == 0) {
-						currentMethod.invoke(object);
+						method.invoke(object);
 					}
 					else {
-						currentMethod
-							.invoke(object,
-								intParams);
+						method.invoke(object,
+							intParams);
 					}
 				}
 				long end = System.currentTimeMillis();
