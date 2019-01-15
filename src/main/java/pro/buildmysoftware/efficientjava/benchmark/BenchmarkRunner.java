@@ -20,32 +20,28 @@ public class BenchmarkRunner {
 	private void benchmarkMethod(Method method, Object object) {
 		MethodBenchmark methodBenchmark = method
 			.getAnnotation(MethodBenchmark.class);
-		if (methodBenchmark != null) {
-			try {
-				long start = System.currentTimeMillis();
-				for (int i = 0; i < methodBenchmark
-					.value(); i++) {
-					Object[] intParams = IntStream
-						.of(methodBenchmark.intParams())
-						.boxed().toArray();
-					if (intParams.length == 0) {
-						method.invoke(object);
-					}
-					else {
-						method.invoke(object,
-							intParams);
-					}
-				}
-				long end = System.currentTimeMillis();
-				System.out.println(String
-					.format("Method %s took %s ms", method
-						.getName(), end - start));
+		if (methodBenchmark == null) {
+			return;
+		}
+
+		try {
+			long start = System.currentTimeMillis();
+			for (int i = 0; i < methodBenchmark.value(); i++) {
+				Object[] intParams = IntStream
+					.of(methodBenchmark.intParams()).boxed()
+					.toArray();
+				method.invoke(object, intParams);
 			}
-			catch (IllegalAccessException | InvocationTargetException e) {
-				throw new RuntimeException(String
-					.format("Failed to benchmark method " + "%s", method
-						.getName()), e);
-			}
+			long end = System.currentTimeMillis();
+			System.out.println(String
+				.format("Method %s took %s ms", method
+					.getName(), end - start));
+		}
+		catch (IllegalAccessException | InvocationTargetException e) {
+			throw new RuntimeException(String
+				.format("Failed to benchmark method " + "%s",
+					method
+					.getName()), e);
 		}
 	}
 }
