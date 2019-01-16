@@ -6,28 +6,29 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+public class FizzBuzzTest {
 
-class FizzBuzzTest {
-	@DisplayName("should return string according to the specifcation of " + "FizzBuzz")
-	@ParameterizedTest(name = "given: {0}; expected: {1}")
+	@DisplayName("given any number, returned msg should be according to " + "the examples")
+	@ParameterizedTest(name = "given: {0}, expected: {1}")
 	// @formatter:off
 	@CsvSource({
-		"1, '1'",
-		"2, '2'",
-		"3, 'Fizz'",
-		"6, 'Fizz'",
-		"5, 'Buzz'",
-		"10, 'Buzz'",
-		"15, 'FizzBuzz'",
-		"30, 'FizzBuzz'",
-		"0, 'FizzBuzz'"
+		"1, 1",
+		"2, 2",
+		"3, Fizz",
+		"5, Buzz",
+		"6, Fizz",
+		"10, Buzz",
+		"15, FizzBuzz",
+		"30, FizzBuzz",
+		"0, FizzBuzz"
 	})
 	// @formatter:on
-	void test(int inputNumber, String expectedMsg) throws Exception {
+	void testFizzBuzz(int number, String expectedMsg) throws Exception {
 		// when
-		String msg = FizzBuzz.fizzBuzz(inputNumber);
+		String msg = FizzBuzz.msg(number);
 
 		// then
 		assertThat(msg).isEqualTo(expectedMsg);
 	}
+
 }
