@@ -1,4 +1,4 @@
-package pro.buildmysoftware.efficientjava;
+package pro.buildmysoftware.efficientjava.classloader;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
