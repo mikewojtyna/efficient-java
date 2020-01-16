@@ -2,6 +2,7 @@ package pro.buildmysoftware.efficientjava.io;
 
 import java.nio.file.Path;
 import java.util.Collection;
+import java.util.Optional;
 import java.util.UUID;
 
 public class PathProductReader implements ProductReader {
@@ -23,7 +24,7 @@ public class PathProductReader implements ProductReader {
 	}
 
 	@Override
-	public Collection<Product> readProductById(UUID id) {
+	public Optional<Product> readProductById(UUID id) {
 		return null;
 	}
 }

@@ -1,6 +1,7 @@
 package pro.buildmysoftware.efficientjava.io;
 
 import java.util.Collection;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface ProductReader {
@@ -9,5 +10,5 @@ public interface ProductReader {
 
 	Collection<Product> readProductsByName(String name);
 
-	Collection<Product> readProductById(UUID id);
+	Optional<Product> readProductById(UUID id);
 }
