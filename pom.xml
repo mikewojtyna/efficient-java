@@ -81,6 +81,11 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -126,5 +131,6 @@
 		<maven-surefire-plugin.version>
 			2.22.1
 		</maven-surefire-plugin.version>
+		<lombok.version>1.18.10</lombok.version>
 	</properties>
 </project>
